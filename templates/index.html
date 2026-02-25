@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Bank Accounts</h2>
+
+{% for acc in accounts %}
+<p>
+  {{ acc.name }} | Balance: ₹{{ acc.balance }}
+  <a href="/deposit/{{ acc.id }}">Deposit</a>
+  <a href="/withdraw/{{ acc.id }}">Withdraw</a>
+</p>
+{% endfor %}
+
+<a href="/create">Create New Account</a>
+
+{% endblock %}
